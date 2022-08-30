@@ -239,7 +239,7 @@ padding-bottom: 0;
 }
 
 /* Чим ми займаємося */
-.subject-title {
+.h2-title {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
@@ -261,13 +261,14 @@ padding-bottom: 0;
     background-color: var(--team-backgraund-color);
 }
 
-.team-title {
+/* .h2-title {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     margin-bottom: 50px;
-}
-.team-list {
+} */
+.team-list,
+.clients-list {
     list-style: none;
     display: flex;
     gap: 30px;
