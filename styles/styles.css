@@ -124,7 +124,6 @@ body {
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    background-clip: ;
 }
 .navigation .nav-item {
     display: block;
@@ -169,6 +168,11 @@ body {
     color: var(--accent-color)
 }
 
+.section.hero {
+    background-image: 
+    linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url("../images/overlay.jpg");
+}
 .hero {
     text-align: center;
     align-items: center;
