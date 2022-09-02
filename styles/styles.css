@@ -10,7 +10,6 @@
     --address-text-color: #FFFFFF;
     --icon-color: #AFB1B8;
 
-
     /* фон */
     --main-backgraund-color: #FFFFFF;
     --secondary-background-color: #2F303A;
@@ -25,7 +24,14 @@ html {
 *::after {
     box-sizing: inherit;
 }
+/* a {
+    text-decoration: none;
+    color: inherit;
+} */
 
+/* ul {
+    list-style: none;
+} */
 h1,
 h2,
 h3,
@@ -47,7 +53,6 @@ ul{
     margin: -1px;
     border: 0;
     padding: 0;
-
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
@@ -75,16 +80,7 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* a {
-    text-decoration: none;
-    color: inherit;
-} */
-
-/* ul {
-    list-style: none;
-} */
-
-/* шапка */
+/* ШАПКА */
 .header {
     border-bottom: 1px solid var(--bordercolor);
 }
@@ -144,11 +140,10 @@ body {
     justify-content: flex-end;
     margin-left: auto;
 }
-
-/* .contacts .contacts-item {
-    display: block;
-    align-content: center;
-} */
+.contacts-item {
+    display: flex;
+    align-items: center;
+}
 
 .contacts .item+.item {
     margin-left: 50px;
@@ -182,18 +177,23 @@ body {
     margin-right: 10px;
 }
 
-.section.hero {
-    background-image: 
-    linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url("../images/overlay.jpg");
-    background-repeat: no-repeat;
-}
+/* ГЕРОЙ */
 .hero {
     text-align: center;
     align-items: center;
     padding-top: 200px;
     padding-bottom: 200px;
+    background-color: var(--secondary-background-color);
+    background-image:
+    linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+            url("../images/overlay.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 1600px;
+    margin: 0 auto;
 }
+
 .hero .hero-title {
     font-weight: 900;
     font-size: 44px;
@@ -221,11 +221,7 @@ body {
     min-height: 50px;
 }
 
-.hero {
-    background-color: var(--secondary-background-color);
-}
-
-/* Переваги */
+/* ПЕРВАГИ */
 .about-working {
 padding-top: 94px;
 padding-bottom: 0;
@@ -268,7 +264,7 @@ padding-bottom: 0;
     margin-bottom: 0;
 }
 
-/* Чим ми займаємося */
+/* ЧИМ МИ ЗАЙМАЄМОСЯ */
 .h2-title {
     font-size: 36px;
     line-height: 1.17;
@@ -286,17 +282,11 @@ padding-bottom: 0;
     display: block;
 }
 
-/* Команда */
+/* КОМАНДА */
 .team {
     background-color: var(--team-backgraund-color);
 }
 
-/* .h2-title {
-    font-size: 36px;
-    line-height: 1.17;
-    text-align: center;
-    margin-bottom: 50px;
-} */
 .team-list,
 .clients-list {
     list-style: none;
@@ -333,6 +323,7 @@ padding-bottom: 0;
     text-align: center;
     color: var(--secondary-text-color)
 }
+
 .socials.list {
     display: flex;
     gap: 10px;
@@ -346,8 +337,8 @@ padding-bottom: 0;
     height: 44px;
     width: 44px;
     border-radius: 50%;
-
 }
+
 .socials-items-link:hover,
 .socials-items-link:focus {
     background-color: var(--accent-color);
@@ -360,11 +351,14 @@ padding-bottom: 0;
 .socials-items-link:hover .socials-icon, .socials-items-link:focus .socials-icon {
     fill: var(--address-text-color);
 }
+
+/* КЛІЄНТИ */
 .clients-list {
     justify-content: center;
 }
-.clients-list-item {
-    color: var(--icon-color);
+
+.clients-link {
+    display: block;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -372,8 +366,15 @@ padding-bottom: 0;
     height: 92px;
     border: 1px solid var(--icon-color);
     border-radius: 4px;
+    color: var(--icon-color);
 }
-.clients-list-item:hover {
+.clients-link:hover,
+.clients-link:focus {
+    border-color: var(--accent-color);
+    cursor: pointer;
+}
+.clients-link:hover .clients-logo,
+.clients-link:focus .clients-logo {
     color: var(--accent-color);
     border-color: var(--accent-color);
     cursor: pointer;
@@ -383,39 +384,46 @@ padding-bottom: 0;
     fill: currentColor;
 }
 
-/* Футер */
+/* ФУТЕР */
 .footer.list {
     display: flex;
     padding-top: 0;
     padding-bottom: 0;
     align-items: baseline;
 }
+
 .footer-address {
     margin-right: 70px;
 }
+
 .footer-logo {
     color: var(--main-backgraund-color);
     letter-spacing: 0.03em;
 }
+
 .footer {
     background-color: var(--secondary-background-color);
     padding-top: 60px;
     padding-bottom: 60px;
 }
+
 .footer-title {
         line-height: 1.14;
         letter-spacing: 0.03em;
         text-transform: uppercase;
         color: var(--address-text-color)
 }
+
 .footer .logo {
     display: block;
     margin-right: 0;
     margin-bottom: 20px;
 }
+
 .address-list {
     list-style: none;
 }
+
 .address {
     font-style: normal;
     line-height: 1.7;
@@ -430,10 +438,12 @@ address .contact {
     color: var(--text-footer-color);
     text-decoration: none;
 }
+
 address .contact:hover,
 address .contact:focus {
     color: var(--accent-color);
 }
+
 .address-list li:not(:last-child) {
     margin-bottom: 9px;
 }
@@ -441,12 +451,13 @@ address .contact:focus {
 .footer-socials .socials-icon {
     fill: var(--address-text-color);
 }
+
 .footer-socials .socials-items {
    background-color: rgba(255, 255, 255, 0.1);
    border-radius: 50%;
 }
 
-/* портфоліо */
+/* ПОРТФОЛІО */
 
 .button-list {
     list-style: none;
@@ -467,6 +478,7 @@ address .contact:focus {
     border-radius: 4px;
     padding: 6px 22px;
 }
+
 .filter-button:hover,
 .filter-button:focus {
     color: var(--address-text-color);
@@ -474,6 +486,8 @@ address .contact:focus {
     border-color: transparent;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+/* ПРОЄКТИ */
 .projects {
     display: flex;
     flex-wrap: wrap;
@@ -481,10 +495,18 @@ address .contact:focus {
     gap: 30px;
 }
 
+.projects-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
 .projects-item {
     width: calc((100% - 60px) /3);
+    display: inline-block;
 }
-.projects-item:hover {
+
+.projects-link:hover,
+.projects-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -495,12 +517,14 @@ address .contact:focus {
     margin-bottom: 4px;
     
 }
+
 .projects-item-type{
     font-size: 16px;
     line-height: 1.875;
     color: var(--secondary-text-color);
     margin-bottom: 0;
 }
+
 .border {
     padding-top: 20px;
     padding-left: 24px;
@@ -509,12 +533,4 @@ address .contact:focus {
     border-left: 1px solid var(--secondary-borderbox);
     border-right: 1px solid var(--secondary-borderbox);
     border-bottom: 1px solid var(--secondary-borderbox);
-}
-.projects-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-.projects-link img {
-    display: block;
 }
